@@ -1,4 +1,64 @@
-<p>contact works!</p>
-<form action="" (submit)="submitForm()">
-    <button type="submit">Submit</button>
-</form>
+<section class="min-h-screen bg-gray-100 flex items-center justify-center px-4 py-12">
+    <div class="bg-white shadow-lg rounded-2xl w-full max-w-3xl p-8">
+      <h2 class="text-3xl font-bold text-gray-800 mb-6 text-center">Get in Touch</h2>
+  
+      <form class="space-y-6" (submit)="submitForm()">
+        <!-- Name -->
+        <div>
+          <label for="name" class="block text-sm font-medium text-gray-700">Full Name</label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            required
+            [(ngModel)]="name"
+            class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-xl shadow-sm focus:ring-blue-500 focus:border-blue-500"
+          />
+        </div>
+  
+        <!-- Email -->
+        <div>
+          <label for="email" class="block text-sm font-medium text-gray-700" >Email Address</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            required
+            [(ngModel)]="email"
+            class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-xl shadow-sm focus:ring-blue-500 focus:border-blue-500"
+          />
+        </div>
+  
+        <!-- Message -->
+        <div>
+          <label for="message" class="block text-sm font-medium text-gray-700">Your Message</label>
+          <textarea
+            id="message"
+            name="message"
+            rows="5"
+            required
+            [(ngModel)]="message"
+            class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-xl shadow-sm focus:ring-blue-500 focus:border-blue-500 resize-none"
+          ></textarea>
+        </div>
+  
+        <!-- Submit -->
+        <div class="text-center">
+          <button
+            type="submit"
+            class="w-full sm:w-auto px-6 py-3 bg-blue-600 text-white font-semibold rounded-xl hover:bg-blue-700 transition"
+          >
+            Send Message
+          </button>
+        </div>
+      </form>
+  
+      <!-- Contact Info -->
+      <div class="mt-10 text-center text-sm text-gray-600">
+        <p><strong>Email: </strong> <a href="mailto:Richard.Day@outlook.com" class="text-blue-600 hover:underline">Richard.Day&#64;outlook.com</a></p>
+        <p><strong>Phone: </strong> <a href="tel:07554278014" class="text-blue-600 hover:underline">07554 278014</a></p>
+        <p><strong>Location: </strong> Somersham, Cambridgeshire</p>
+      </div>
+    </div>
+  </section>
+  

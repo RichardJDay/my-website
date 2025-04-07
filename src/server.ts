@@ -38,7 +38,7 @@ app.use(
 );
 
 app.use('/email', (req, res, next) => {
-  console.log('email endpoint hit');
+  console.log('email endpoint hit', res.json({requestBody: req.body}));
   
   /**
  *
@@ -103,7 +103,7 @@ app.use('/**', (req, res, next) => {
 if (isMainModule(import.meta.url)) {
   const port = process.env['PORT'] || 4000;
   app.listen(port, () => {
-    console.log(`Node Express server listening on http://angular-ssr:${port}`);
+    console.log(`Node Express server listening on http://localhost:${port}`);
   });
 }
 

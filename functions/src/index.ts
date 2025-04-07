@@ -8,6 +8,6 @@
  */
 
 import * as functions from 'firebase-functions';
-import { reqHandler } from '../../src/server';  // This should point to your Express server (SSR handler).
+import { reqHandler } from '../../src/server.js';  // This should point to your Express server (SSR handler).
 
 export const ssr = functions.https.onRequest(reqHandler);

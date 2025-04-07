@@ -32,3 +32,14 @@ jobs:
           firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_RICHARDDAY_3C174 }}
           channelId: live
           projectId: richardday-3c174
+
+      - name: Deploy to Firebase Hosting and Functions
+        uses: FirebaseExtended/action-hosting-deploy@v0
+        with:
+          repoToken: ${{ secrets.GITHUB_TOKEN }}
+          firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_RICHARDDAY_3C174 }}
+          channelId: live
+          projectId: richardday-3c174
+          # 👇👇 This tells it to deploy Cloud Functions too
+          deployFunctions: true
+

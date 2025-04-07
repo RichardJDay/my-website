@@ -8,7 +8,11 @@ export class EmailService {
 
   constructor(private httpClient: HttpClient) { }
 
-  public sendEmail() {
-    this.httpClient.put('http://angular-ssr:4000/email', {}).subscribe()
+  public sendEmail(email: string, name: string, message: string) {
+    this.httpClient.put('http://localhost:4000/email', {
+      email: email,
+      name: name,
+      message: message
+    }).subscribe()
   }
 }
