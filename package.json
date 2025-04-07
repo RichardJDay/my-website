@@ -8,7 +8,8 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "build:ssr": "ng build",
-    "serve:ssr": "node dist/server/server.mjs",
+    "dev:ssr": "ng run my-website:serve",
+    "serve:ssr": "node dist/my-website/server/server.mjs",
     "serve:ssr:my-website": "ng build "
   },
   "private": true,
