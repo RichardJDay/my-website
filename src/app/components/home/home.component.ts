@@ -8,5 +8,13 @@ import { RouterModule } from '@angular/router';
   styleUrl: './home.component.css'
 })
 export class HomeComponent {
+  downloadSample() {
+    const fileUrl = 'assets/Richard Day CV.docx';
+    const fileName = 'Richard Day CV.docx';
 
+    const anchor = document.createElement('a');
+    anchor.href = fileUrl;
+    anchor.download = fileName;
+    anchor.click();
+  }
 }
