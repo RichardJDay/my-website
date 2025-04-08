@@ -1,0 +1,44 @@
+<article class="prose prose-lg max-w-3xl mx-auto py-12 px-4">
+    <h1>How I Built a CI/CD Pipeline with Azure DevOps</h1>
+    <p class="text-sm text-gray-500">Published on February 15, 2025 · 6 min read</p>
+  
+    <p>
+      I recently built a fully automated pipeline using Azure DevOps to deploy an Angular + .NET application.
+      Here’s how I tackled the infrastructure and automation steps.
+    </p>
+  
+    <h2>Stack Used</h2>
+    <br>
+    <ul>
+      <li>Angular 17 + .NET 8 API</li>
+      <li>Azure DevOps Pipelines (YAML)</li>
+      <li>Docker & Azure Container Apps</li>
+      <li>Terraform for infrastructure provisioning</li>
+    </ul>
+  
+    <h2>📦 Setting Up CI</h2>
+    <pre><code class="language-yaml">
+  trigger:
+    branches:
+      include:
+        - main
+  stages:
+    - stage: Build
+      jobs:
+        - job: Build_Angular
+          ...
+    </code></pre>
+  
+    <h2>🚀 Results</h2>
+    <p>
+      Deployment time was cut from 30 minutes to ~5 minutes, and we now have reliable, testable builds
+      across all environments.
+    </p>
+  
+    <blockquote>
+      "This was a game-changer for our release process."
+    </blockquote>
+  
+    <p>Let me know if you'd like a deep dive on K6 testing or Event Grid next!</p>
+  </article>
+  
