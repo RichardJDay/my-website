@@ -1,12 +1,8 @@
 <section class="min-h-screen bg-gray-100 flex items-center justify-center px-4 py-12">
 	<div class="bg-white shadow-lg rounded-2xl w-full max-w-3xl p-8">
 		<h2 class="text-3xl font-bold text-gray-800 mb-6 text-center">Get in Touch</h2>
-
-
-
 		<form (submit)="submitForm()"
 			class="space-y-6">
-			<!-- Name -->
 			<div>
 				<label for="name"
 					class="block text-sm font-medium text-gray-700">
@@ -19,10 +15,6 @@
 					required
 					class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-xl shadow-sm focus:ring-blue-500 focus:border-blue-500">
 			</div>
-
-
-
-			<!-- Email -->
 			<div>
 				<label for="email"
 					class="block text-sm font-medium text-gray-700">
@@ -35,10 +27,6 @@
 					required
 					class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-xl shadow-sm focus:ring-blue-500 focus:border-blue-500">
 			</div>
-
-
-
-			<!-- Message -->
 			<div>
 				<label for="message"
 					class="block text-sm font-medium text-gray-700">
@@ -51,32 +39,34 @@
 					required
 					class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-xl shadow-sm focus:ring-blue-500 focus:border-blue-500 resize-none"></textarea>
 			</div>
-
-
-
-			<!-- Submit -->
 			<div class="text-center">
 				<button *ngIf="!messageSent"
 					type="submit"
 					class="w-full sm:w-auto px-6 py-3 bg-blue-600 text-white font-semibold rounded-xl hover:bg-blue-700 transition">
 					Send Message
 				</button>
-        <div *ngIf="messageSent" class="flex items-center justify-center">
-          <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="24" cy="24" r="22" stroke="green" stroke-width="4" fill="none"/>
-            <path d="M16 24L22 30L34 18" stroke="green" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </div>
-        
-
-
-
+				<div *ngIf="messageSent"
+					class="flex items-center justify-center">
+					<svg width="48"
+						height="48"
+						viewBox="0 0 48 48"
+						fill="none"
+						xmlns="http://www.w3.org/2000/svg">
+						<circle cx="24"
+							cy="24"
+							r="22"
+							stroke="green"
+							stroke-width="4"
+							fill="none"></circle>
+						<path d="M16 24L22 30L34 18"
+							stroke="green"
+							stroke-width="4"
+							stroke-linecap="round"
+							stroke-linejoin="round"></path>
+					</svg>
+				</div>
 			</div>
 		</form>
-
-
-
-		<!-- Contact Info -->
 		<div class="mt-10 text-center text-sm text-gray-600">
 			<p>
 				<strong>Email:</strong>

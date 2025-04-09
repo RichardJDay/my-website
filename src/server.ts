@@ -13,7 +13,7 @@ const browserDistFolder = resolve(serverDistFolder, '../browser');
 const app = express();
 const angularApp = new AngularNodeAppEngine();
 
-
+app.use(express.json()); 
 /**
  * Example Express Rest API endpoints can be defined here.
  * Uncomment and define endpoints as necessary.
@@ -37,9 +37,12 @@ app.use(
   }),
 );
 
-app.use('/email', (req, res, next) => {
-  console.log('email endpoint hit', res.json({requestBody: req.body}));
-  
+app.use('/email', (req, res) => {
+  const { email, name, message } = req.body; // 👈 Extract values from body
+  console.log('Received email:', email);
+  if (!email || !name || !message) {
+    return res.status(400).json({ error: 'Missing email or name in request body' });
+  }  
   /**
  *
  * This call sends a message to one recipient.
@@ -59,8 +62,8 @@ app.use('/email', (req, res, next) => {
       "Messages": [
         {
           "From": {
-            "Email": "richard.day@outlook.com",
-            "Name": "Richard Day"
+            "Email": email,
+            "Name": name
           },
           "To": [
             {
@@ -69,8 +72,8 @@ app.use('/email', (req, res, next) => {
             }
           ],
           "Subject": "Your email flight plan!",
-          "TextPart": "Dear passenger 1, welcome to Mailjet! May the delivery force be with you!",
-          "HTMLPart": "<h3>Dear passenger 1, welcome to <a href=\"https://www.mailjet.com/\">Mailjet</a>!</h3><br />May the delivery force be with you!"
+          "TextPart": message,
+          "HTMLPart": ""
         }
       ]
     })
@@ -81,6 +84,7 @@ app.use('/email', (req, res, next) => {
     .catch((err: any) => {
       console.log(err.statusCode)
     })
+    return res.status(200).json({ message: 'Email sent successfully' });
 });
 
 /**

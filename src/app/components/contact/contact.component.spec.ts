@@ -1,4 +1,4 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, fakeAsync, TestBed } from '@angular/core/testing';
 
 import { ContactComponent } from './contact.component';
 
@@ -14,10 +14,16 @@ describe('ContactComponent', () => {
 
     fixture = TestBed.createComponent(ContactComponent);
     component = fixture.componentInstance;
+    
     fixture.detectChanges();
   });
 
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should call emailService.sendEmail on form submit', fakeAsync(() => {    
+
+  }))
+
 });
