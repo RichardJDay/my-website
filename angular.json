@@ -14,7 +14,9 @@
           "builder": "@angular-devkit/build-angular:application",
           "options": {
             "outputPath": "dist/my-website",
-            "externalDependencies": ["node-mailjet"],
+            "externalDependencies": [
+              "node-mailjet"
+            ],
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -40,6 +42,12 @@
           },
           "configurations": {
             "production": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.prod.ts"
+                }
+              ],
               "budgets": [
                 {
                   "type": "initial",
